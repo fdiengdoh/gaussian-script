@@ -14,8 +14,11 @@ cyclohexane
 hydronium_ion.gjf
 methylcarbanion 
 ```
-Then run the following command. 
+Then run the following commands. 
 
 ```
+chmod u+x g16batch.sh
 ./g16batch.sh
 ```
+
+You need to run `chmod` only once to make the file executable.
