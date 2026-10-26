@@ -30,7 +30,6 @@ if [ "$1" != "--background" ]; then
     nohup "$0" --background >> "$log_file" 2>&1 &
     echo "Gaussian calculations started in background."
     echo "Output log: $log_file"
-    echo "Monitor progress with: tail -f \"$log_file\""
     exit 0
 fi
 
