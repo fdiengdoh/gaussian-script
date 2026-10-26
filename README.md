@@ -3,7 +3,7 @@
 [g16batch.sh](tools/g16batch.sh) would batch run g16 base on a README file.
 
 How to use it?
-Create a README file in a folder as follows:
+Create a README file in a folder as follows (check [sample](sample) folder):
 
 ```
 # Please run g16 jobs in the following order
