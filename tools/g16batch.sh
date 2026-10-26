@@ -55,7 +55,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     # 4. Clean any accidental trailing/leading spaces from the filename string
     clean_line=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
-    # 5. Ensure the filename ends with .gjf (using your case method!)
+    # 5. Ensure the filename ends with .gjf
     case "$clean_line" in
         *.gjf) gjf="$clean_line" ;;
         *)     gjf="${clean_line}.gjf" ;;
