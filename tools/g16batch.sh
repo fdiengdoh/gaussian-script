@@ -103,3 +103,4 @@ while IFS= read -r line || [ -n "$line" ]; do
 done < README
 
 echo "All calculations in README have been processed."
+echo -e "script by\nF. Diengdoh,\nDepartment of Chemistry,\nSt. Anthony's College,\nShillong, India"
