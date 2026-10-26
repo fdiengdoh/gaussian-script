@@ -30,14 +30,14 @@ chmod u+x g16batch.sh
 ./g16batch.sh
 ```
 
-You need to run `chmod` only once to make the file executable.
+You need to run `chmod` only once to make the file executable. This script will run automatically in the background. Any console output will be logged as a `g16batch.txt` file.
 
 ## gtime.sh
 [gtime.sh](tools/gtime.sh) This tool is for obtaining Total Time Elapsed and Job CPU Time where a gaussian input file has multi links in it. Just download the tool as it is and use as before.
 
 ## checkg16.sh
 
-[checkg16.sh](tools/checkg16.sh) This script check if g16 job is still running or not. If job is completed then it check all log files in the folder for error etc.
+[checkg16.sh](tools/checkg16.sh) This script check if g16 job is still running or not. If job is completed then it check all log files in the folder for error and would compress all log files too if you want it compressed as `logs.zip` files.
 
 ## Make All scripts work on any folder (global)
 
@@ -48,4 +48,4 @@ Download all `tools` to your home directory, then add the following lines on you
 export PATH="$HOME/tools:$PATH"
 ```
 
-Now, I do not need to copy each tool on every folder I want to run. So, I just run the command like `g16batch.sh`, `gtime.sh` or `checkg16.sh` anywhere. You can also remove the `.sh` extension from the filename in tools and then you can just run command like `g16batch`, `gtime` or `checkg16` anywhere.
+Now, you do not need to copy each tool on every folder you want to run. So, you can just run the commands like `g16batch.sh`, `gtime.sh` or `checkg16.sh` anywhere. You can also remove the `.sh` extension from the filename in `tools` and then you can just run command like `g16batch`, `gtime` or `checkg16` anywhere.
