@@ -1,5 +1,6 @@
 # bash-script for running gaussian
 
+## g16batch.sh
 [g16batch.sh](tools/g16batch.sh) would batch run g16 base on a README file.
 
 How to use it?
@@ -33,3 +34,10 @@ export PATH="$HOME/tools:$PATH"
 ```
 
 Now, I do not need to copy [g16batch.sh](tools/g16batch.sh) on every folder I want to batch run. So, I just run the command `g16batch.sh` anywhere.
+
+## gtime.sh
+[gtime.sh](tools/gtime.sh) This tool is for obtaining Total Time Elapsed and Job CPU Time where a gaussian input file has multi links in it. Just download the tool as it is and use as before.
+
+## checkg16.sh
+
+[checkg16.sh](tools/checkg16.sh) This script check if g16 job is still running or not. If job is completed then it check all log files in the folder for error etc.
