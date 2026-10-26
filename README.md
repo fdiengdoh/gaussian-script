@@ -33,7 +33,7 @@ You need to run `chmod` only once to make the file executable.
 
 ## Make All scripts work on any folder (global)
 
-Download all `tools` to your home directory, then added the following lines on your `.profile` file (edit using `vi` or `nano`).
+Download all `tools` to your home directory, then add the following lines on your `.profile` file (edit using `vi` or `nano`).
 
 ```
 #some personal tools for gaussian
