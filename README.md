@@ -34,12 +34,16 @@ You need to run `chmod` only once to make the file executable. This script will 
 
 ## checkg16.sh
 
-[checkg16.sh](tools/checkg16.sh) This script check if g16 job is still running or not. Why I build this tool? Well, when I run jobs on a server with my own user account, I would login, then use `top` command to check if my job is still running. Now, after all jobs are completed, I would have to download all log files to my pc for analysis. So, this tool does two jobs, check if g16 job is completed or not for my queue, if completed, it would zip all log files as a single file, make it easier for me to download.
+[checkg16.sh](tools/checkg16.sh) This script check if g16 job is still running or not. 
+
+Why I build this tool? Well, when I run jobs on a server with my own user account, I would login, then use `top` command to check if my job is still running. Now, after all jobs are completed, I would have to download all log files to my pc for analysis. So, this tool does two jobs, check if g16 job is completed or not for my queue, if completed, it would zip all log files as a single file, make it easier for me to download.
 
 Your use case might not be same as mine, especially if a research group is sharing the same login username.
 
 ## gtime.sh
-[gtime.sh](tools/gtime.sh) This tool is for obtaining Total Time Elapsed and Job CPU Time where a gaussian input file has multi links in it. Why I build this tool. I was running some jobs, then after the jobs completed in about 48 hours, the last line of log file shows only 2 hours of elapsed times. I know that multistep calculation would reset elapsed time, but my curious mind just want to know exactly how much time really has elapsed. 
+[gtime.sh](tools/gtime.sh) This tool is for obtaining Total Time Elapsed and Job CPU Time where a gaussian input file has multi links in it. 
+
+Why I build this tool? I was running some jobs, then after the jobs completed in about 48 hours, the last line of log file shows only 2 hours of elapsed times. I know that multistep calculation would reset elapsed time, but my curious mind just want to know exactly how much time really has elapsed. 
 
 Again, this might be the most useless tool for you. But, maybe just download the tool as it is.
 
