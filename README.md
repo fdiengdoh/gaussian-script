@@ -1,5 +1,7 @@
 # bash-script for running gaussian
 
+Note: You can copy the tools to a folder you are running gaussian jobs, or if you can make it [global as described below too](#make-all-scripts-work-on-any-folder-global).
+
 ## g16batch.sh
 [g16batch.sh](tools/g16batch.sh) would batch run g16 base on a README file.
 
