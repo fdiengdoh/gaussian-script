@@ -62,5 +62,6 @@ if [ -n "$CPU_SECS" ] && [ "$CPU_SECS" != "0" ]; then
 else
     echo "Total CPU Time: Not found"
 fi
+echo -e "\n\nscript by\nF. Diengdoh,\nDepartment of Chemistry,\nSt. Anthony's College,\nShillong, India"
 
 echo "================================"
