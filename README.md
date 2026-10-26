@@ -40,4 +40,4 @@ Download all `tools` to your home directory, then add the following lines on you
 export PATH="$HOME/tools:$PATH"
 ```
 
-Now, I do not need to copy each tool on every folder I want to run. So, I just run the command like `g16batch.sh`, `gtime.sh` or `checkg16.sh` anywhere. You can also remove the `.sh` extension from the filename in tools and then you can just run command like `g16batch`, `gtime or `checkg16` anywhere.
+Now, I do not need to copy each tool on every folder I want to run. So, I just run the command like `g16batch.sh`, `gtime.sh` or `checkg16.sh` anywhere. You can also remove the `.sh` extension from the filename in tools and then you can just run command like `g16batch`, `gtime` or `checkg16` anywhere.
