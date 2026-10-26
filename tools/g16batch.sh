@@ -82,7 +82,8 @@ while IFS= read -r line || [ -n "$line" ]; do
     base="${gjf%.gjf}"
 
     # Check for normal Gaussian termination
-    if grep -q "Normal termination of Gaussian" "$base.log" 2>/dev/null; then
+    LAST_LINE==$(tail -n 1 "$base.log")
+    if echo "$LAST_LINE" | grep -q "Normal termination"; then
         echo "Successfully completed: $gjf"
 
         # Move available files into completed/
