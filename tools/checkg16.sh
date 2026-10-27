@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check for running g16 processes
-if pgrep -f "g16" > /dev/null; then
+if pgrep -x "g16" > /dev/null; then
    echo "g16 is still running."
 else
 	# check error files first
