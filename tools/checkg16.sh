@@ -76,7 +76,7 @@ else
 	echo "Check complete."
 	echo "========================================="
 	echo
-	echo "Do you want to compress all .log files into logs.zip?"
+	echo "Do you want to compress all .log files as a zip fille?"
 	read -p "Enter y/n: " choice
 	if [ "$choice" = "y" ]; then
 		read -p "Enter archive filename [default: logs.zip]: " custom_name
