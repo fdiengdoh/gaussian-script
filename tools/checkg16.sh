@@ -4,17 +4,57 @@
 if pgrep -x "g16" > /dev/null; then
    echo "g16 is still running."
 else
-	# check error files first
+	#!/bin/bash
+
+	# Enable nullglob so the array is empty if no .log files match
+	shopt -s nullglob
+	log_files=(*.log)
+	shopt -u nullglob
+
+	# Check if any log files were found
+	if [ ${#log_files[@]} -eq 0 ]; then
+		echo "No log files found."
+		exit 1
+	fi
+
+	# Variables / arrays to store the categorized files
+	normal_files=()
+	error_files=()
+
+	# Loop through each log file found and categorize them
+	for LOGFILE in "${log_files[@]}"; do
+		LAST_LINE=$(tail -n 1 "$LOGFILE")
+
+		# Check if the last line contains the phrase
+		if echo "$LAST_LINE" | grep -q "Normal termination"; then
+			normal_files+=("$LOGFILE")
+		else
+			error_files+=("$LOGFILE")
+		fi
+	done
+
+	# Print results in the requested format
 	echo "File(s) with Error Termination..."
 	echo "========================================="
-	grep -L "Normal termination" *.log
-	echo
-	
-	# check normal files
+	if [ ${#error_files[@]} -eq 0 ]; then
+		echo "None"
+	else
+		for file in "${error_files[@]}"; do
+			echo "$file"
+		done
+	fi
+
+	echo ""
+
 	echo "File(s) with Normal Termination..."
 	echo "========================================="
-	grep -L "Error termination" *.log
-	echo
+	if [ ${#normal_files[@]} -eq 0 ]; then
+		echo "None"
+	else
+		for file in "${normal_files[@]}"; do
+			echo "$file"
+		done
+	fi
 	
 	# check imaginary frequencies
 	echo "File(s) with Imaginary Frequencies..."
@@ -39,8 +79,15 @@ else
 	echo "Do you want to compress all .log files into logs.zip?"
 	read -p "Enter y/n: " choice
 	if [ "$choice" = "y" ]; then
-    	zip logs.zip *.log
-    	echo "Compression complete."
+		read -p "Enter archive filename [default: logs.zip]: " custom_name
+		# Use custom_name if provided, otherwise default to logs.zip
+    	zip_name="${custom_name:-logs.zip}"
+
+		# Ensure it ends with .zip
+    	[[ "$zip_name" != *.zip ]] && zip_name="${zip_name}.zip"
+    	
+		zip "$zip_name" *.{log,gjf}
+    	echo "Compression complete: $zip_name"
 	fi
 fi
 
